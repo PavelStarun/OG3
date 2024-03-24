@@ -46,9 +46,21 @@ button2.place(relx=0.32, rely=0.8, height=35, width=100)
 
 root.mainloop()
 
+start_ticks = pygame.time.get_ticks()
+hits = 0
+font = pygame.font.Font(None, 36)
 running = True
+
 while running:
     screen.fill(color)
+    current_ticks = pygame.time.get_ticks()
+    seconds_passed = (current_ticks - start_ticks) // 1000
+    time_left = 10 - seconds_passed
+
+    if time_left <= 0:
+        running = False
+        continue
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -57,8 +69,15 @@ while running:
             if target_x <= mouse_x <= target_x + target_width and target_y <= mouse_y <= target_y + target_height:
                 target_x = random.randint(0, SCREEN_WIDTH - target_width)
                 target_y = random.randint(0, SCREEN_HEIGHT - target_height)
+                hits += 1
     screen.blit(target_image, (target_x, target_y))
-    pygame.display.update()
 
+    pygame.display.update()
+screen.fill((0, 0, 0))
+font = pygame.font.Font(None, 36)
+text = font.render(f"Количество попаданий: {hits}", True, (255, 255, 255))
+screen.blit(text, (10, 10))
+
+pygame.display.update()
 
 pygame.quit()
