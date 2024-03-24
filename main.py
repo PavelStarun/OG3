@@ -34,8 +34,9 @@ root.title("Приветствую тебя в моей первой игре!")
 root.configure(bg="light blue")
 root.geometry("400x200")
 
-tk_img = tk.PhotoImage(file="tkimg.png")
+tk_img = tk.PhotoImage(file="img/tkimg.png")
 tk_label = tk.Label(root, image=tk_img)
+tk_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 button1 = tk.Button(root, text="Начать игру", bg="green3", command=on_button)
 button1.pack(pady=10)
