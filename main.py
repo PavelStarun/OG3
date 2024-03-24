@@ -3,7 +3,8 @@ import random
 import tkinter as tk
 
 label = True
-while = label
+while = label:
+    pass
 
 
 tk.mainloop()
