@@ -17,7 +17,7 @@ target_width = 80
 target_height = 80
 target_x = random.randint(0, SCREEN_WIDTH - target_width)
 target_y = random.randint(0, SCREEN_HEIGHT - target_height)
-color = (random.randint(0,255), random.randint(0,255)
+color = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
 
 
 
