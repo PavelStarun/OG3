@@ -1,5 +1,14 @@
 import pygame
 import random
+import tkinter as tk
+
+label = True
+while = label:
+    pass
+
+
+tk.mainloop()
+
 
 
 pygame.init()
