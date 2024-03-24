@@ -3,10 +3,10 @@ import random
 import tkinter as tk
 
 
-def on_button():
+def start_game():
     root.destroy()
 
-def off_button():
+def quit_game():
     root.destroy()
     pygame.display.quit()
 
@@ -27,22 +27,22 @@ target_width = 80
 target_height = 80
 target_x = random.randint(0, SCREEN_WIDTH - target_width)
 target_y = random.randint(0, SCREEN_HEIGHT - target_height)
-color = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
+color = (76, 81, 74)
 
 root = tk.Tk()
 root.title("Приветствую тебя в моей первой игре!")
 root.configure(bg="light blue")
-root.geometry("400x200")
+root.geometry("470x270")
 
-tk_img = tk.PhotoImage(file="img/tkimg.png")
+tk_img = tk.PhotoImage(file="img/tkimg2.png")
 tk_label = tk.Label(root, image=tk_img)
 tk_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-button1 = tk.Button(root, text="Начать игру", bg="green3", command=on_button)
-button1.pack(pady=10)
+button1 = tk.Button(root, text="Начать игру", bg="grey55", command=start_game)
+button1.place(relx=0.32, rely=0.63, height=35, width=100)
 
-button2 = tk.Button(root, text="Выйти", bg="red2", command=off_button)
-button2.pack(pady=10)
+button2 = tk.Button(root, text="Выйти", bg="grey54", command=quit_game)
+button2.place(relx=0.32, rely=0.8, height=35, width=100)
 
 root.mainloop()
 
