@@ -2,16 +2,17 @@ import pygame
 import random
 import tkinter as tk
 
-label = True
-while = label:
-    pass
 
+def on_button():
+    root.destroy()
 
-tk.mainloop()
-
+def off_button():
+    root.destroy()
+    pygame.display.quit()
 
 
 pygame.init()
+
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -28,7 +29,21 @@ target_x = random.randint(0, SCREEN_WIDTH - target_width)
 target_y = random.randint(0, SCREEN_HEIGHT - target_height)
 color = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
 
+root = tk.Tk()
+root.title("Приветствую тебя в моей первой игре!")
+root.configure(bg="light blue")
+root.geometry("400x200")
 
+tk_img = tk.PhotoImage(file="tkimg.png")
+tk_label = tk.Label(root, image=tk_img)
+
+button1 = tk.Button(root, text="Начать игру", bg="green3", command=on_button)
+button1.pack(pady=10)
+
+button2 = tk.Button(root, text="Выйти", bg="red2", command=off_button)
+button2.pack(pady=10)
+
+root.mainloop()
 
 running = True
 while running:
