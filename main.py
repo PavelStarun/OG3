@@ -26,5 +26,4 @@ while running:
     pass
 
 
-
 pygame.quit()
