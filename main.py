@@ -20,11 +20,11 @@ def reset_game():
     target_y = random.randint(0, SCREEN_HEIGHT - target_height)
     game_active = True
     if level == 2:
-        target_speed_x = random.choice([-2, 2])  # Скорость движения мишени по X
-        target_speed_y = random.choice([-2, 2])  # Скорость движения мишени по Y
+        target_speed_x = random.random  # Скорость движения мишени по X
+        target_speed_y = random.random  # Скорость движения мишени по Y
     else:
-        target_speed_x = 0.4
-        target_speed_y = 0.3
+        target_speed_x = 0
+        target_speed_y = 0
 
 
 pygame.init()
@@ -59,8 +59,8 @@ root.mainloop()
 
 game_time = 10
 reset_game()
-target_speed_x = 0.5
-target_speed_y = 0.5
+target_speed_x = float(0.3)
+target_speed_y = float(0.2)
 
 running = True
 while running:
@@ -77,9 +77,9 @@ while running:
             target_y += target_speed_y
             # Изменение направления при достижении границ экрана
             if target_x <= 0 or target_x >= SCREEN_WIDTH - target_width:
-                target_speed_x *= -0.4
+                target_speed_x *= -1
             if target_y <= 0 or target_y >= SCREEN_HEIGHT - target_height:
-                target_speed_y *= -0.4
+                target_speed_y *= -1
         screen.blit(target_image, (target_x, target_y))
         if time_left == 0:
             game_active = False
