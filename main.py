@@ -69,8 +69,8 @@ reset_game()
 target_speed_x = float(0.15)
 target_speed_y = float(0.15)
 
-lavel = True
-while lavel():
+running = True
+while running:
     pass
 
 
