@@ -19,13 +19,7 @@ def reset_game():
     target_x = random.randint(0, SCREEN_WIDTH - target_width)
     target_y = random.randint(0, SCREEN_HEIGHT - target_height)
     game_active = True
-    if level == 2:
-        target_speed_x = random.random
-        target_speed_y = random.random
-    else:
-        target_speed_x = 0
-        target_speed_y = 0
-
+    
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (100, 100)
 
 pygame.init()
