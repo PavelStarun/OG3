@@ -32,10 +32,10 @@ pygame.init()
 
 pygame.mixer.music.load("music/fon.ogg")
 pygame.mixer.music.play(-1)
-pygame.mixer.music.set_volume(0.18)
+pygame.mixer.music.set_volume(1)
 
 hit_sound = pygame.mixer.Sound("music/shot.ogg")
-hit_sound.set_volume(0.05)
+hit_sound.set_volume(0.7)
 
 SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
